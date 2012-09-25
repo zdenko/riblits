@@ -1,13 +1,18 @@
 # encoding: utf-8
-require 'sinatra'
-require 'haml'
+require 'rubygems'
+require 'bundler'
+
+Bundler.require
+
+# require 'sinatra'
+# require 'haml'
 
 require_relative 'minify_resources'
 class MyApp < Sinatra::Application
 	enable :sessions
 
 	configure :production do
-		set :haml, { :ugly=>true }
+		# set :haml, { :ugly=>true }
 		set :clean_trace, true
 		set :css_files, :blob
 		set :js_files,  :blob
